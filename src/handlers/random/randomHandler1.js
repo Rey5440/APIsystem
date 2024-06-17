@@ -3,7 +3,8 @@ const randomControler1 = require("../../controllers/randomController/randomContr
 
 const randomHandler1 = async (req, res) => {
   try {
-    const random = await randomControler1();
+    const { value } = req.body
+    const random = await randomControler1(value);
 
     res.status(200).json(random); //array de usuarios
   } catch (error) {
